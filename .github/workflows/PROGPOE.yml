@@ -42,12 +42,12 @@ jobs:
        # copy compiled classes to test directory 
       - name : copy compiled classes to testresources directory 
         working-directory: ./src
-        run: cp -t  "../../test/st10074970" Message.class ST10074970.class
+        run: cp -t  "../test/st10074970" Message.class ST10074970.class
         
         #copy compiled tests 
       - name : copy compiled Test classes to testresources directory 
         working-directory: ./test
-        run: cp -t  "../../testresources/" Message.class ST10074970.class
+        run: cp -t  "../testresources/" Message.class ST10074970.class
         
         # list contents or directory
       - name: List contents test package
