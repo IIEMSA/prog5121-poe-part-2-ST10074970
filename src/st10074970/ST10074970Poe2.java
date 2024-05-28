@@ -30,19 +30,21 @@ public class ST10074970Poe2 {
                         scanner.nextLine();
 
                         switch (choice) {
-                            case 1 -> {
+                            case 1: {
                                 String loginStatus = signIn(scanner);
                                 System.out.println(loginStatus);
+                                break;
                             }
-                            case 2 -> {
+                            case 2: {
                                 String registrationMessage = signUp(scanner);
                                 System.out.println(registrationMessage);
+                                break;
                             }
-                            case 3 -> {
+                            case 3: {
                                 System.out.println("Exiting the application. Goodbye!");
                                 return;
                             }
-                            default -> System.out.println("Invalid choice. Please try again.");
+                            default: System.out.println("Invalid choice. Please try again.");
                         }
                     } else {
                         System.out.println("Invalid input. Please enter a valid integer choice.");
@@ -60,13 +62,19 @@ public class ST10074970Poe2 {
                         scanner.nextLine();
 
                         switch (choice) {
-                            case 1 -> addTask(scanner);
-                            case 2 -> System.out.println("Feature is still in development. Coming Soon.");
-                            case 3 -> {
+                            case 1: {
+                                addTask(scanner);
+                                break;
+                            }
+                            case 2: {
+                                System.out.println("Feature is still in development. Coming Soon.");
+                                break;
+                            }
+                            case 3: {
                                 System.out.println("Exiting the application. Goodbye!");
                                 return;
                             }
-                            default -> System.out.println("Invalid choice. Please try again.");
+                            default: System.out.println("Invalid choice. Please try again.");
                         }
                     } else {
                         System.out.println("Invalid input. Please enter a valid integer choice.");
@@ -135,10 +143,19 @@ public class ST10074970Poe2 {
                 int statusChoice = scanner.nextInt();
                 scanner.nextLine(); // Consume newline after reading int
                 switch (statusChoice) {
-                    case 1 -> status = "To Do";
-                    case 2 -> status = "Doing";
-                    case 3 -> status = "Done";
-                    default -> System.out.println("Invalid choice. Please enter a valid option.");
+                    case 1: {
+                        status = "To Do";
+                        break;
+                    }
+                    case 2: {
+                        status = "Doing";
+                        break;
+                    }
+                    case 3: {
+                        status = "Done";
+                        break;
+                    }
+                    default: System.out.println("Invalid choice. Please enter a valid option.");
                 }
             } else {
                 System.out.println("Invalid input. Please enter a valid integer choice.");
