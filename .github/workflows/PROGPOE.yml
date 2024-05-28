@@ -30,28 +30,28 @@ jobs:
         run: ls
      # Compiles classes to test 
       - name: compile classes
-        working-directory: src/st10074970
+        working-directory: src
         run: javac -cp "../testresources/junit-platform-console-standalone-1.8.2.jar" ./st10074970/Message.java ../st10074970/Message.java "../test/st10074970/ST10074970Test.java" "../test/ST10074970/MessageTest.java"
 
     # list contents of src to verify that classess compiled 
       - name: List contents of src directory after compile
-        working-directory: src/st10074970
+        working-directory: src
         run: ls
         
         
        # copy compiled classes to test directory 
       - name : copy compiled classes to testresources directory 
-        working-directory: src/st10074970
+        working-directory: src
         run: cp -t  "../../test/st10074970" Message.class ST10074970.class
         
         #copy compiled tests 
       - name : copy compiled Test classes to testresources directory 
-        working-directory: ./test/st10074970
+        working-directory: ./test
         run: cp -t  "../../testresources/" Message.class ST10074970.class
         
         # list contents or directory
       - name: List contents test package
-        working-directory: ./test/st10074970
+        working-directory: ./test
         run: ls
         
         #run message Class tests and output report 
