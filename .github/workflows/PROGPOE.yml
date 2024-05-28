@@ -57,7 +57,7 @@ jobs:
         #run message Class tests and output report 
       - name: run tests and create report 
         working-directory: ./test
-        run: 
+        run: |
           ls
           java -jar "../testresources/junit-platform-console-standalone-1.6.0.jar" -cp "." --select-class st10074970.MessageTest
        
