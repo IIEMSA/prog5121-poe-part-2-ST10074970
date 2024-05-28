@@ -1,24 +1,31 @@
+package st10074970;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit4TestClass.java to edit this template
  */
 
+import st10074970.Message;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import org.junit.Test;
-
 /**
  *
  * @author isaac
  */
-public class ST10074970Poe2Test {
-    
-    public ST10074970Poe2Test() {
-    }
+public class MessageTest 
+{
+    Message message = new Message();
+    public MessageTest() {}
 
     @Test
-    public void testMain() {
+    public void testGetMessage() 
+    {
+        String expected = "I have arrived";
+        String actual = message.getMessage();
+        
+        assertEquals(expected,actual);
     }
     
 }

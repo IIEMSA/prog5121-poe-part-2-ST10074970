@@ -1,3 +1,5 @@
+package st10074970;
+
 import javax.swing.JOptionPane;
 import java.util.Scanner;
 import java.util.regex.Matcher;
