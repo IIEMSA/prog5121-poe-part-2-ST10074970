@@ -47,7 +47,7 @@ jobs:
         #copy compiled tests 
       - name : copy compiled Test classes to testresources directory 
         working-directory: ./test/st10074970
-        run: cp -t  "../../testresources/" Message.class ST10074970Poe2.class
+        run: cp -t  "../../testresources/" MessageTest.class ST10074970Poe2Test.class
         
         # list contents or directory
       - name: List contents test package
