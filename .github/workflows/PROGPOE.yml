@@ -31,7 +31,7 @@ jobs:
      # Compiles classes to test 
       - name: compile classes
         working-directory: ./src
-        run: javac -cp "../testresources/junit-platform-console-standalone-1.6.0.jar" ./st10074970/Message.java ./st10074970/ST10074970Poe2.java ./st10074970/Response.java "../test/st10074970/MessageTest.java" "../test/st10074970/ST10074970Poe2Test.java" "../test/st10074970/ResponseTest.java"
+        run: javac -cp "../testresources/junit-platform-console-standalone-1.6.0.jar" ./st10074970/Message.java ./st10074970/ST10074970Poe2.java ./st10074970/Response.java ./st10074970/Task.java "../test/st10074970/MessageTest.java" "../test/st10074970/ST10074970Poe2Test.java" "../test/st10074970/ResponseTest.java" "../test/st10074970/CheckingTest.java"
 
     # list contents of src to verify that classess compiled 
       - name: List contents of src directory after compile
@@ -42,12 +42,12 @@ jobs:
        # copy compiled classes to test directory 
       - name : copy compiled classes to testresources directory 
         working-directory: ./src/st10074970
-        run: cp -t  "../../test/st10074970" Message.class ST10074970Poe2.class Response.class
+        run: cp -t  "../../test/st10074970" Message.class ST10074970Poe2.class Response.class Task.class
         
         #copy compiled tests 
       - name : copy compiled Test classes to testresources directory 
         working-directory: ./test/st10074970
-        run: cp -t  "../../testresources/" MessageTest.class ST10074970Poe2Test.class Response.class
+        run: cp -t  "../../testresources/" MessageTest.class ST10074970Poe2Test.class Response.class CheckingTest.class
         
         # list contents or directory
       - name: List contents test package
@@ -59,7 +59,7 @@ jobs:
         working-directory: ./test
         run: |
           ls
-          java -jar "../testresources/junit-platform-console-standalone-1.6.0.jar" -cp "." --select-class st10074970.MessageTest
+          java -jar "../testresources/junit-platform-console-standalone-1.6.0.jar" -cp "." --select-class st10074970.CheckingTest
 
           #run message Class tests and output report 
       - name: run response and create report 
