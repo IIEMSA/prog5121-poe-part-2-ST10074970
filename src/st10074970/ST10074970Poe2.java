@@ -52,7 +52,7 @@ public class ST10074970Poe2 {
                     }
                 } else {
                     System.out.println("\nChoose an option:");
-                    System.out.println("1. Add Task");
+                    System.out.println("1. Add Tasks");
                     System.out.println("2. Show Report (Coming Soon)");
                     System.out.println("3. Quit");
                     System.out.print("Enter your choice: ");
@@ -63,7 +63,49 @@ public class ST10074970Poe2 {
 
                         switch (choice) {
                             case 1: {
-                                addTask(scanner);
+                                System.out.println("Enter the number of tasks");
+                                if (scanner.hasNextInt()){
+                                    int numTasks = scanner.nextInt();
+                                    Task[] tasks = new Task[numTasks];
+                                    String name;
+                                    String description;
+                                    int number;
+                                    String developerDetails;       
+                                    String status;
+                                    int duration;
+                                    String statusChoice;
+                                    for (int i = 0; i < numTasks; i++){
+                                        System.out.println("Enter task " + (i + 1) + "'s name");
+                                        name = scanner.nextLine();
+                                        System.out.println("Enter the task " + (i + 1) + "'s description");
+                                        description = scanner.nextLine();
+                                        number = i + 1;
+                                        System.out.println("Enter the developers name and surname");
+                                        developerDetails = scanner.nextLine();
+                                        System.out.println("Select the status for task" + (i + 1));
+                                        System.out.println("1. To Do");
+                                        System.out.println("2. Done");
+                                        System.out.println("3. Doing");
+                                        statusChoice = scanner.nextLine();
+                                        if (statusChoice.equals(1)){
+                                            status = "To Do";
+                                        } else if (statusChoice.equals(2)){
+                                            status = "Done";
+                                        } else {
+                                            status = "Doing";
+                                        }
+                                        System.out.println("Enter the duration of the task " + (i + 1));
+                                        duration = scanner.nextInt();
+                                        Task t = new Task(name, number, developerDetails, description, status, duration);
+                                        tasks[i] = t;
+                                    }
+                                    for (int i = 0; i < numTasks; i++){
+                                        System.out.println(tasks[i].printTaskDetails() + '\n');
+                                    }
+                                    System.out.println("Total Duration: " + tasks[0].returnTotalHours(tasks));
+                                } else {
+                                    System.out.println("Invalid input. Please enter a valid integer choice.");
+                                }
                                 break;
                             }
                             case 2: {

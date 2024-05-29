@@ -10,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 /**
  *
  * @author isaac
@@ -26,6 +27,22 @@ public class MessageTest
         String actual = message.getMessage();
         
         assertEquals(expected,actual);
+    }
+    @Test
+    public void testCheckMessageFormat()
+    {   
+        assertTrue(message.checkMessageFormat());
+    }
+
+    @Test
+    public void testCheckNumSuccess() 
+    {
+        for (int i = 0; i < 3; i++) 
+        {
+            String expected = "Perfect numbers ";
+            String actual = message.checkNum(i);
+            assertEquals(expected, actual);
+        }
     }
     
 }
